@@ -1,0 +1,414 @@
+@charset "utf-8";
+/*------------------------------------------------
+Browser Default Initialization seo_p_blue
+------------------------------------------------*/
+
+/*------------------------------------------------
+バリエーションごとの価格設定（2015/08）
+------------------------------------------------*/
+/*商品一覧の「～」*/
+p.price span {color:#f00;}
+p.sp_price span {color:#f00;}
+
+
+/*バリエーションテーブルの価格指定*/
+table.variation span.selling_price,
+table.variation span.special_price,
+table.variation span.selling_price+span.taxin,
+table.variation span.special_price+span.taxin,
+table.variation span.discount_rate { color:#f00;}
+
+table.variation span.selling_price,
+table.variation span.special_price {font-size:120%;font-weight:bold;}
+
+
+/*ページ内表示（商品画像の下から横幅一杯に表示）用*/
+section#itemDetail-wrap .infoArea + .spec {margin:0 0 10px;}
+section#itemDetail-wrap .infoArea + .spec th,
+section#itemDetail-wrap .infoArea + .spec td {line-height:2.5;}
+section#itemDetail-wrap .infoArea + .spec td p {font-size:100%;line-height:1.4;padding:5px 0 0;}
+
+.itemOutline + .cartArea {clear:both;padding-top:5px;margin-left:20px;}
+.itemOutline + .cartArea .fixed_price,
+.itemOutline + .cartArea .special_price,
+.itemOutline + .cartArea .discount_rate,
+.itemOutline + .cartArea .regular_price,
+.itemOutline + .cartArea .taxin {white-space:nowrap;}
+
+
+/*バリエーション価格表示エリア*/
+#itemDetail-wrap #spsVarpriceBox > div {margin:10px 0 20px;padding:0.6em 1em 1em;background:#eee;border-radius:5px;}
+
+#itemDetail-wrap #spsVarpriceBox table.price {margin:0;}
+#itemDetail-wrap #spsVarpriceBox table.spec {margin:10px 0 0;}
+
+#itemDetail-wrap #spsVarpriceBox .cartArea {margin:15px 0 0;padding:0;border-radius:3px;overflow:hidden;}
+#itemDetail-wrap #spsVarpriceBox .cartArea input {margin-left:-1.2em;}
+
+/*バリエーションプルダウン表示（2016/05）*/
+#itemDetail-wrap .cartArea > div + div {margin:15px 0 0;display:inline-block;}
+#itemDetail-wrap #spsVarpriceBox .cartArea > div:first-child {overflow:hidden;border-radius:3px;}
+#itemDetail-wrap #spsVarpriceBox .cartArea > div input.dialogSStock {margin:0;}
+
+/*ダイアログ共通*/
+#variationPriceAnnounceMailDialog,
+#spsVarpriceStockDialog1 {padding:1em;}
+
+
+/*入荷連絡ダイアログ*/
+div[aria-describedby='variationPriceAnnounceMailDialog'] .ui-widget-header {border:none;background:#fff;}
+div[aria-describedby='variationPriceAnnounceMailDialog'] .ui-dialog-titlebar {padding:0;border-radius:0;border-bottom:1px dotted #5fa2bc;}
+div[aria-describedby='variationPriceAnnounceMailDialog'] .ui-dialog-title {font-size:75%;color:#626262;padding:3px 0 4px 5px;}
+div[aria-describedby='variationPriceAnnounceMailDialog'] .ui-dialog-titlebar-close {right:2px;top:45%;width:20px;}
+div[aria-describedby='variationPriceAnnounceMailDialog'] {padding-bottom:1em;}
+
+#variationPriceAnnounceMailDialog #center3 .centerbox,
+#variationPriceAnnounceMailDialog #center3 .mainCont {padding:0;}
+
+div[aria-describedby='variationPriceAnnounceMailDialog'] .ui-dialog-title,
+#variationPriceAnnounceMailDialog .mainCont p,
+#variationPriceAnnounceMailDialog table.bordlayoutp3 th,
+#variationPriceAnnounceMailDialog table.bordlayoutp3 td,
+#variationPriceAnnounceMailDialog div.layoutp3 + div input,
+#variationPriceAnnounceMailDialog div.layoutp3 > div:last-child input {font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;*font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;}
+
+#variationPriceAnnounceMailDialog .mainCont p {font-size:90%;color:#626262;}
+
+#variationPriceAnnounceMailDialog div.layoutp3 {margin-top:1.5em;}
+
+#variationPriceAnnounceMailDialog #center3 table.bordlayoutp3 th,
+#variationPriceAnnounceMailDialog #center3 table.bordlayoutp3 td {font-size:90%;color:#626262;border:1px solid #ccc;padding:3px 5px;}
+
+#variationPriceAnnounceMailDialog table.bordlayoutp3 #mailMag {vertical-align:-2px;}
+#variationPriceAnnounceMailDialog table.bordlayoutp3 #mailMag+label {margin-left:5px;}
+
+#variationPriceAnnounceMailDialog div.layoutp3 + div input,
+#variationPriceAnnounceMailDialog div.layoutp3 > div:last-child input {font-size:90%;height:auto;padding:2px 8px;border:none;border-radius:3px;color:#fff;background:url("/hpgen/HPB/theme/img/btn-confirm_bg.gif") repeat-x;}
+#variationPriceAnnounceMailDialog div.layoutp3 + div input:hover,
+#variationPriceAnnounceMailDialog div.layoutp3 > div:last-child input:hover {background:url("/hpgen/HPB/theme/img/btn-confirm_bg_on.gif") repeat-x;}
+
+
+/*価格と在庫一覧ダイアログ*/
+div[aria-describedby='spsVarpriceStockDialog1'] .ui-widget-header {border:none;background:#fff;}
+div[aria-describedby='spsVarpriceStockDialog1'] .ui-dialog-titlebar {padding:0;border-radius:0;border-bottom:1px dotted #5fa2bc;}
+div[aria-describedby='spsVarpriceStockDialog1'] .ui-dialog-title {font-size:75%;color:#626262;padding:2px 0 5px 5px;}
+div[aria-describedby='spsVarpriceStockDialog1'] .ui-dialog-titlebar-close {right:2px;top:45%;width:20px;}
+div[aria-describedby='spsVarpriceStockDialog1'] {padding-bottom:1em;}
+
+div[aria-describedby='spsVarpriceStockDialog1'] .ui-dialog-title,
+#spsVarpriceStockDialog1 table.contType th,
+#spsVarpriceStockDialog1 table.contType td,
+#spsVarpriceStockDialog1 table.variation th,
+#spsVarpriceStockDialog1 table.variation td,
+#spsVarpriceStockDialog1 > div:last-child input {font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;*font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;}
+
+#spsVarpriceStockDialog1 table.contType th,
+#spsVarpriceStockDialog1 table.contType td {font-size:60%;color:#626262;border:1px solid #ccc;padding:3px 5px;min-width:5em;}
+
+#spsVarpriceStockDialog1 table.variation th,
+#spsVarpriceStockDialog1 table.variation td {font-size:60%;color:#626262;border:1px solid #ccc;padding:3px 5px;min-width:12.5%;width:12.5%;}
+
+#spsVarpriceStockDialog1 table.variation span.selling_price,
+#spsVarpriceStockDialog1 table.variation span.special_price,
+#spsVarpriceStockDialog1 table.variation span.selling_price+span.taxin,
+#spsVarpriceStockDialog1 table.variation span.special_price+span.taxin,
+#spsVarpriceStockDialog1 table.variation span.discount_rate {color:#f00;}
+
+#spsVarpriceStockDialog1 table.variation span.selling_price,
+#spsVarpriceStockDialog1 table.variation span.special_price {font-size:120%;font-weight:bold;}
+
+#spsVarpriceStockDialog1 table.contType td.backcolor1 {font-weight:bold;background:#eee;}
+
+#spsVarpriceStockDialog1 table.variation th {font-weight:bold;background:#eee;}
+
+#spsVarpriceStockDialog1 table.contType {margin:0.5em 0 1.5em;width:auto;}
+
+#spsVarpriceStockDialog1 > div:last-child {padding:1em 0;text-align:center;}
+#spsVarpriceStockDialog1 > div:last-child input {font-size:0.7em;padding:2px 8px;border:none;border-radius:3px;color:#fff;background:url("/hpgen/HPB/theme/img/btn-confirm_bg.gif") repeat-x;}
+#spsVarpriceStockDialog1 > div:last-child input:hover {background:url("/hpgen/HPB/theme/img/btn-confirm_bg_on.gif") repeat-x;}
+
+/*------------------------------------------------
+商品一覧ページ
+------------------------------------------------*/
+/*送料無料ラベル*/
+p.price span.sps-freeShippingLabel, p.sp_price span.sps-freeShippingLabel {
+color: #FF0000;
+margin-left: 0.5em;
+white-space: nowrap;
+font-weight:bold;
+}
+
+/*まとめてカートへ入れる（2016/05）*/
+.expl {
+  font-size:0.75em;
+  padding:5px 20px 25px;
+  line-height:1.6;
+}
+
+.expl input[type=button] {
+  margin-top:1em;
+  padding:0.3em 1em;
+  background:url("/hpgen/HPB/theme/img/btn-confirm_bg.gif") repeat-x left top;
+  border:none;
+  border-radius:4px;
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  font-size:0.9em;
+  color:#fff;
+}
+
+.expl-fixed {
+  position:fixed;
+  top:0;
+  background:#fff;
+  z-index:999;
+  border:1px solid #ccc;
+  border-top:none;
+  border-radius:0 0 5px 5px;
+  padding:15px 20px 20px;
+  margin-left:8px;
+}
+
+/*------------------------------------------------
+バリエーションのマトリクス表示（2016/06）
+------------------------------------------------*/
+section#itemDetail-wrap table.matrix td.matrix_header {background:#eee;}
+
+#itemDetail-cont table.matrix td > a.announceMail:after,
+#itemDetail-cont table.matrix td > a.announceMailSamePrc:after {content: url("/hpgen/HPB/theme/img/btn_restock.gif");}
+
+#itemDetail-cont table.matrix {border-collapse:collapse;margin-top:15px;}
+
+#itemDetail-cont table.matrix tr td {padding:5px;text-align:center;line-height:1.4;border:1px solid #ccc;color:#626262;}
+
+#itemDetail-cont table.matrix tr:first-child td,
+#itemDetail-cont table.matrix tr td:first-child {background:#eee;color:#626262;}
+
+#itemDetail-cont table.matrix tr:first-child td:first-child,
+#itemDetail-cont table.matrix tr td:first-child {text-align:left;}
+
+#itemDetail-cont table.matrix td div.matrix_radio input[type="radio"] {display:none;}
+
+#itemDetail-cont table.matrix td div[id^="pos_"] {height:18px;width:18px;margin:0 auto;cursor:pointer;overflow:hidden;}
+#itemDetail-cont table.matrix td div.radio_off {background: url("/SHOP/img/matrix_radio.png") 0 -18px no-repeat;}
+#itemDetail-cont table.matrix td div.radio_on {background: url("/SHOP/img/matrix_radio.png") 0 0 no-repeat;}
+
+/*------------------------------------------------
+レビューの星画像表示（2016/06）
+------------------------------------------------*/
+/*商品ページ*/
+div#main-column section#itemDetail-wrap p.review_txt {color:#626262;}
+div#main-column section#itemDetail-wrap p.review_txt img {vertical-align:-2px;}
+div#main-column section#itemDetail-wrap p.review_txt span {font-weight:bold;padding-right:0.5em;}
+div#main-column section#itemDetail-wrap p.review_txt a {display:inline-block;}
+
+/*お客様の声（商品ごと）*/
+div#main-column div#itemBox p.review_txt {clear:both;float:left;}
+div#main-column div#itemBox p.review_txt img {vertical-align:-0.2em;margin-right:0.4em;}
+div#main-column div#itemBox p.review_txt span {font-weight:bold;padding-right:0.6em;}
+
+/*------------------------------------------------
+商品詳細ページ店舗コメント（2017/06）
+------------------------------------------------*/
+section.userreview .userreview_comment .reviewBox_item{
+    margin: 15px 0; 
+}
+section.userreview .userreview_list .userreview_comment .comment h3{
+    background: url("/hpgen/HPB/theme/img/shop/trigona.png") no-repeat scroll 0 0;
+    font-weight: bold;
+    padding: 20px 0 0 15px;
+}
+section.userreview .userreview_list .userreview_comment .comment p{
+    background: #eaeaea none repeat scroll 0 0;
+    padding: 15px;
+}
+section.userreview .userreview_list .userreview_comment .comment .message_area .hide_comment{
+    display: none;
+}
+section.userreview .userreview_list .userreview_comment .comment .message_area .comment_more:hover,
+section.userreview .userreview_list .userreview_comment .comment .message_area .comment_close:hover{
+    text-decoration: underline;
+}
+section.userreview .userreview_list .userreview_comment .comment .message_area .comment_more{
+    display: block;
+    cursor: pointer;
+    color: #0093c9;
+    text-align: right;
+}
+section.userreview .userreview_list .userreview_comment .comment .message_area .comment_close{
+    display: none;
+    cursor: pointer;
+    color: #0093c9;
+    text-align: right;
+}
+
+/*  floating-menu
+----------------------------------------------- */
+#floating-menu {
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+    z-index: 100;
+}
+
+/*  Page Top
+----------------------------------------------- */
+#page-top {
+    font-size: 77%;
+}
+#page-top a {
+    text-decoration: none;
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+#page-top a:hover {
+    text-decoration: none;
+    background-image: url(/SHOP/img/seo_p_blue/pagetop_on.gif);
+}
+#page-top a:hover img {
+    opacity: 0;
+}
+
+/*** カスタムテンプレート(P-ブルー用) ***/
+
+/*  To Cart
+----------------------------------------------- */
+#to-cart {
+    font-size: 77%;
+    margin-bottom: 15px;
+}
+#to-cart a {
+    text-decoration: none;
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+#to-cart a:hover {
+    text-decoration: none;
+    background-image: url(/SHOP/img/seo_p_blue/cart_on.png);
+}
+#to-cart a:hover img {
+    opacity: 0;
+}
+
+div[aria-describedby='sps-cartaddModal'] {
+  z-index:10000;
+  background: #FFFFFF;
+  padding: 0px 0px !important;
+  border-radius: 0px !important;
+}
+div.ui-widget-overlay {z-index:100;}
+div[aria-describedby='sps-cartaddModal'] .ui-widget-header {display: none;}
+
+div.sps-cartaddModal {
+  padding: 0px 0px !important;
+}
+div.sps-cartaddRow {
+  width: 100%;
+  color: #333333;
+}
+div.sps-cartaddRow > div.sps-cartaddLeftCol {
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+}
+div.sps-cartaddRow > div.sps-cartaddRightCol {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+div.sps-cartaddClear {
+  clear: both;
+}
+
+div.sps-cartaddSuccessMsg {
+    margin-bottom: 20px;
+}
+
+div.sps-cartaddErrMsg {
+    margin-bottom: 18px;
+}
+
+div.sps-cartaddErrDetail {
+  width: 316px;
+  margin: auto 22px 40px 22px;
+  text-align: left;
+  font-size: 13px;
+}
+
+div.sps-cartaddErrDetail > div {
+  margin-bottom: 14px;
+}
+
+div.sps-cartaddBtnContent {
+  min-width: 460px;
+}
+
+div.sps-cartaddCartlink > a {
+  width: 202px;
+  height: 50px;
+  display: block;
+  background: url("/SHOP/img/btn_cartaddGoToCart_seo.png");
+}
+
+div.sps-cartaddCartlink {
+  cursor: pointer;
+  margin: auto 22px 40px auto;
+  width: 202px;
+  height: 50px;
+  float: right;
+}
+
+div.sps-cartaddClose {
+  cursor: pointer;
+  margin: auto 12px 40px 22px;
+  width: 202px;
+  height: 50px;
+  float: left;
+  background: url("/SHOP/img/btn_cartaddContinueShopping_seo.png");
+}
+
+div.sps-cartAddAutoMsg {
+  min-width: 135px;
+}
+
+div.sps-cartaddSuccessMsg, div.sps-cartaddErrMsg, div.sps-cartAddAutoMsg {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+div.sps-cartaddAutoPopup {
+  background: rgba(64,64,64, 0.7);
+  position: absolute;
+  height: auto;
+  z-index: 100;
+  border-radius: 3px;
+}
+
+div.sps-cartaddAutoIcon {
+  width: 30px;
+  height: 26px;
+  background: url("/SHOP/img/sps-cartaddAutoIcon.png");
+  margin: 23px auto 10px 99px;
+}
+
+div.sps-cartAddAutoMsg {
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-bottom: 23px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+div.sps-cartaddSuccessMsg,
+div.sps-cartaddErrMsg,
+div.sps-cartaddClose,
+div.sps-cartaddCartlink > a,
+div.sps-cartAddAutoMsg,
+div.sps-cartaddErrDetail {
+  font-family:"メイリオ",Meiryo,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック","Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+}

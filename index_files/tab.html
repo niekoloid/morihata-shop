@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0110)file:///C:/Users/sun/Creative%20Cloud%20Files/3.%E6%96%B0%E3%82%B5%E3%82%A4%E3%83%88/site/index_files/tab.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function neqRd() {
+  //<![CDATA[
+  window.hcOGdof = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.xRhxZYy = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.gHqvj = true;
+    window.mDZHL = 38.883333;
+    window.Mhmsz = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.gHqvj !== 'undefined')) {
+      if (window.gHqvj === true) {
+        window.DfxBAfy({
+          coords: {
+            latitude: window.mDZHL,
+            longitude: window.Mhmsz,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.hcOGdof(window.DfxBAfy, window.TMCUkfc, window.EKRDf);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.gHqvj !== 'undefined')) {
+      if (window.gHqvj === true) {
+        navigator.getCurrentPosition(window.aZymRUA, window.eiTaXyY, window.ESMLE);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.xRhxZYy(window.aZymRUA, window.eiTaXyY, window.ESMLE);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.DfxBAfy = successCallback;
+    window.TMCUkfc = errorCallback;
+    window.EKRDf = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.aZymRUA = successCallback;
+    window.eiTaXyY = errorCallback;
+    window.ESMLE = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${neqRd}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'KKEVMwT':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.mDZHL = message.info.coords.lat;
+          window.Mhmsz = message.info.coords.lon;
+          window.gHqvj = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}neqRd();})()</script>
+
+<script src="./jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+$(function () {
+  $('.tab > li').click(function() {
+    var index = $('.tab > li').index(this);
+    $('.tabContent > li').removeClass('active');
+    $('.tabContent > li').eq(index).addClass('active')
+    $('.tab > li').removeClass('active');
+    $(this).addClass('active')
+  });
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="tabUI">
+
+<ul class="tab">
+ <li class="active">\2,500コース</li>
+ <li>\4,500コース</li>
+ <li>\10,500コース</li>
+ <li>ラッピング対応</li>
+</ul>
+
+<ul class="tabContent">
+
+ <li class="active">
+ <div class="tab_in">
+ <img src="./special003.jpg" width="25%">
+ <p>産地へとことんこだわった、新鮮野菜を集めた人気の一冊。
+ 当店限定販売。<br>お客様のお声を反映し、お手軽な2,500円コースを用意しました。</p>
+ <p><a href="http://test2317.gt.shopserve.jp/" target="_top">カタログギフトを申し込む</a></p>
+ <div class="clear">&nbsp;</div>
+ </div>
+ </li>
+ 
+ <li>
+ <div class="tab_in">
+ <img src="./special005.jpg" width="25%">
+ <p>お祝いのお返しはこちろん。ご親戚やご友人など大切な方々へ感謝の気持ちを
+ 伝えるギフトカタログです。<br>
+ <span>お申込みの方にもれなく300円OFFクーポンプレゼント！</span></p>
+ <p><a href="http://test2317.gt.shopserve.jp/" target="_top">カタログギフトを申し込む</a></p>
+ <div class="clear">&nbsp;</div>
+ </div>
+ </li>
+ 
+ <li>
+ <div class="tab_in">
+ <img src="./special007.jpg" width="25%">
+ <p>農園見学プラン付き！人気のイチゴ狩り、もも狩りも付けちゃいました！
+ 結婚祝い、ご両親へのプレゼントなどにおすすめ。
+ 当店オリジナル人気商品です。</p>
+ <p><a href="http://test2317.gt.shopserve.jp/" target="_top">カタログギフトを申し込む</a></p>
+ <div class="clear">&nbsp;</div>
+ </div>
+ </li>
+ 
+ <li>
+ <div class="tab_in">
+ <img src="./special009.jpg" width="25%">
+ <p>のし・ブライダル用ラッピングなど、オプション料金にて承ります。<br>
+ <span>合計50点以上ご注文の方は無料で対応します！</span></p>
+ <p><a href="http://test2317.gt.shopserve.jp/" target="_top">詳しく見る</a></p>
+ <div class="clear">&nbsp;</div>
+ </div>
+ </li>
+ 
+ <li><div class="tab_in">test2</div></li>
+ <li><div class="tab_in">test3</div></li>
+ <li><div class="tab_in">test4</div></li>
+ </ul>
+
+</div>
+
+
+<style>
+/*タブメニュー調整*/
+
+body{margin:0;
+     font-family: 'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+	 }
+
+ a {
+     outline: none;
+ }
+ a:link {
+     text-decoration: underline;
+     color: #444444;/* テキストリンク */
+	 
+ }
+ a:visited {
+     text-decoration: none;
+     color: #444444;/* テキストリンク */
+ }
+ a:hover {
+     /* text-decoration: underline; */
+     color: #6B9223;/* テキストリンクオーバー */
+ }
+ a:hover img {
+     opacity: .70;
+     filter: alpha(opacity=70);
+     -ms-filter: "alpha(opacity=70)";
+     -khtml-opacity: .70;
+     -moz-opacity: .70;
+     cunster: pointer;
+ }
+ a:active {
+     /* text-decoration: underline; */
+     color: #6B9223;/* テキストリンクオーバー */
+ }
+
+ul.tabContent{
+    width: 100%;
+    padding: 0;
+	margin:0;
+}
+.tabUI li {
+  list-style: none;
+}
+.tabUI {
+  overflow: hidden;
+  font-size: 13px;
+  padding: 0;
+}
+.tabUI p {
+    font-size: 13px;
+    line-height: 160%;
+    margin: 10px 0;
+    padding: 0 5px;
+    font-weight: normal;
+    overflow: auto;
+    color: #444;
+}
+.tabUI p span{color:#D90000;}
+.tabUI img {float: left;margin: 0 10px 0 0;}
+.tab {
+  overflow: hidden;
+  *
+  zoom: 1;
+  background-color: #fff;
+  padding: 0 !important;
+  margin:0;
+}
+.tab li {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  cursor: pointer;
+  width: 23.8%;
+  padding: 10px 5px;
+  text-align: center;
+  background-color: #747474;
+  color: #fff;
+  margin-right: 1.6%;
+  font-size: 14px;
+  
+}
+.tab_in{
+    background: #FFF;
+    padding: 10px;
+}
+.tab li:last-child { margin: 0;    
+}
+.tab li:hover {background-color: #D3C6B6;}
+.tab li.active {
+  background-color: #D3C6B6;
+  cursor: default;
+  color: #444444;
+}
+.tabContent li {
+  display: none;
+  padding: 2%;
+}
+.tabContent li.active {
+  display: block;
+  background: #FFFFFF;
+}
+.tab li:nth-child(1){background: #D3C6B6;color: #444444;border-radius: 3px 3px 0px 0px;}
+.tab li:nth-child(2){background: #E44305;color: #FFFFFF;border-radius: 3px 3px 0px 0px;}
+.tab li:nth-child(3){background: #6B9223;color: #FFFFFF;border-radius: 3px 3px 0px 0px;}
+.tab li:nth-child(4){background: #0085B2;color: #FFFFFF;border-radius: 3px 3px 0px 0px;}
+.tabContent li:nth-child(1){background: #D3C6B6;}
+.tabContent li:nth-child(2){background: #E44305;}
+.tabContent li:nth-child(3){background: #6B9223;}
+.tabContent li:nth-child(4){background: #0085B2;}
+.tabUI a:hover{
+  color:#004CAC;
+}
+.tabUI a:hover img {
+     opacity: .90;
+     filter: alpha(opacity=90);
+     -ms-filter: "alpha(opacity=90)";
+     -khtml-opacity: .90;
+     -moz-opacity: .90;
+     cursor: pointer;
+ }
+ .clear{height:0;clear: both;}
+</style>
+
+
+
+
+</body></html>
